@@ -47,7 +47,7 @@
         <div id="select-form-career" class="survey-question">
           <p>2. Which of the following careers interest you most?</p>
           <select id="career">
-            <option value="0">Please Select</option>
+            <option value="0">Select</option>
             <option value="Cyber">Cybersecurity</option>
             <option value="App">App Development</option>
             <option value="Web">Web Development</option>
@@ -68,14 +68,26 @@
           </label>
         </div>
 
-        <div class="survey-question">
-          <p>4. Question four.</p>
+        <div id="radio-form-3" class="survey-question">
+          <p>4. How do you prefer to work with others?</p>
+          <label>
+            <input type="radio" name="team" value="solo" checked>
+            I prefer to work solo.
+          </label><br>
+          <label>
+            <input type="radio" name="team" value="in-person">
+            I prefer to work with a team, in person.
+          </label><br>
+          <label>
+            <input type="radio" name="team" value="remote">
+            I prefer to work with a team, remotely.
+          </label>
         </div>
 
         <div id="select-form-interest" class="survey-question">
           <p>5. Do you already have a language you're interested in?</p>
           <select id="select-interest">
-            <option value="0">Please Select</option>
+            <option value="0">Select</option>
             <option value="help">No! That's why I'm here!</option>
             <option value="Ruby">Ruby</option>
             <option value="C#">C#</option>

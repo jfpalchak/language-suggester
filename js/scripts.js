@@ -28,9 +28,11 @@ function showResult(language) {
 // checkErrors() will check for multiple possible error scenarios amongst selection forms.
 // if present, the function will update the form with the appropriate error message,
 // otherwise it will call reset()
-function checkErrors(career, interest){
-  if (career === '0' || interest === '0') {
-    if (career === '0' && interest == '0') { 
+function isError(career, language){
+  let error;
+  if (career === '0' || language === '0') {
+    error = true;
+    if (career === '0' && language == '0') { 
       document.getElementById('error-interest').removeAttribute('class', 'hidden');
       document.getElementById('error-career').removeAttribute('class', 'hidden');
     } else if (career === '0') {
@@ -39,30 +41,30 @@ function checkErrors(career, interest){
       document.getElementById('error-interest').removeAttribute('class', 'hidden');
     }
   } else {
-    reset();
+    error = false;
   }
+
+  return error;
 }
 // load page resources before running JS functions
 function handleSubmitEvent(e) {
   // prevent page refresh
   e.preventDefault();
-
+  // if re-submitting, reset results and error messages
+  reset();
   // grab answers to each survey question
   const experience = document.querySelector("input[name='experience']:checked").value;
   const career = document.getElementById("career").value;
   const puzzle = document.querySelector("input[name='puzzle']:checked").value;
   const language = document.getElementById("select-interest").value;
 
-  // check for errors, and if re-submitting, reset error messages
-  checkErrors(career, language);
-
   // here we'll check survey results
-  if (language === 'help'){ 
+  if (!isError(career, language)){  // if there's an error, we move on
     showResult(language);
   // } else if (language === 'help') {
 
   } else { // if a specific language was selected, we'll suggest that language
-    showResult(language);
+    console.log("there was an error");
   }
 }
 

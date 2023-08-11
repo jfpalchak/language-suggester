@@ -38,5 +38,9 @@
 #error-interest {
   display: hidden;
   color: red;
-  /* font-weight: bold; */
+}
+
+#error-career {
+  display: hidden;
+  color: red;
 }
