@@ -76,6 +76,7 @@
             <option value="Rust">Rust</option>
             <option value="Swift">Swift</option>
           </select>
+          <span id="error" class="hidden">* Please choose an option!</span>
         </div>
     
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -83,9 +84,10 @@
     </div>
 
     <!-- SURVEY RESULTS -->
-    <div id="results" class="content container">
+    <div id="results" class="hidden">
       <h2>Your Results:</h2>
       <p>Based on your answers, it's clear that the best starting language for you is:</p>
+      <p id="answer">""</p>
     </div>
   </body>
 </html>
