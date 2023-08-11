@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/scripts.js"></script>
+
+    <title>Programming Language Suggester</title>
+  </head>
+  <body>
+    <div id="greeting" class="container">
+      <h1>So you want to be a programmer?</h1>
+      <p>
+        Making edits to your tumblr and MySpace HTML no longer gives you the
+        thrill it once did. You need something new. Something fresh.
+      </p>
+      <p>
+        But where do you start? You start here, of course! Use the form below,
+        and we'll let you know the perfect starting language for you.
+      </p>
+    </div>
+    <div class="container">
+      <h2>Language Suggestion Form:</h2>
+      <form id="theForm" class="container">
+        <div id="radio-form" class="">
+          <p>Do you have any programming experience?</p>
+          <label>
+            <input type="radio" name="experience" value="no" checked>
+            None
+          </label>
+          <label>
+            <input type="radio" name="experience" value="little">
+            Some
+          </label>
+          <label>
+            <input type="radio" name="experience" value="yes">
+            I've dabbled here and there.
+          </label>
+        </div>
+        <div id="select-form" class="">
+          <p>Do you already have a language you're interested in?</p>
+          <select id="select-interest">
+            <option value="">Please Select</option>
+            <option value="0">No! That's why I'm here!</option>
+            <option value="Ruby">Ruby</option>
+            <option value="C#">C#</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Go">Go</option>
+            <option value="Python">Python</option>
+            <option value="Rust">Rust</option>
+            <option value="Swift">Swift</option>
+          </select>
+        </div>
+        <div>
+
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
