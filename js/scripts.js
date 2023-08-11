@@ -21,20 +21,30 @@ function showResult(language) {
   text.scrollIntoView();
 }
 
+// showErrorCareer() updates DOM with error message next to Question 2
+function showError2() {
+  document.getElementById('error-career').removeAttribute('class', 'hidden');
+}
+
+// showErrorCareer() updates DOM with error message next to Question 5
+function showError5() {
+  document.getElementById('error-interest').removeAttribute('class', 'hidden');
+}
+
 // checkErrors() will check for multiple error scenarios in the form.
 // if there are errors, it will update the html with the appropriate error message,
 // as well as return a boolean value of true.
 // if there are no errors, it will return a boolean value of false
-function checkErrors(career, language){
-  let isError = (career === '0' || language === '0');
+function checkErrors(career, interest){
+  let isError = (career === '0' || interest === '0');
   if (isError) {
-    if (career === '0' && language == '0') { 
-      document.getElementById('error-interest').removeAttribute('class', 'hidden');
-      document.getElementById('error-career').removeAttribute('class', 'hidden');
+    if (career === '0' && interest == '0') { 
+      showError2();
+      showError5();
     } else if (career === '0') {
-      document.getElementById('error-career').removeAttribute('class', 'hidden');
+      showError2();
     } else {
-      document.getElementById('error-interest').removeAttribute('class', 'hidden');
+      showError5();
     }
   }
   return isError;

@@ -52,7 +52,7 @@ git clone https://github.com/jfpalchak/language-suggester.git
 
 ## Known Bugs
 
-* When the user resubmits the form with a new error and the result disappears, the page snaps back to the top instead of smooth scrolling.
+* When the user resubmits the form with a new error and the previous result disappears, the page will snap back to the top.
 
 ## License
 
