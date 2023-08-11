@@ -15,11 +15,9 @@
     <div id="greeting" class="container">
       <h1>So you want to be a programmer?</h1>
       <p>
-        Making edits to your tumblr and MySpace HTML no longer gives you the
-        thrill it once did. You need something new. Something fresh.
-      </p>
-      <p>
-        But where do you start? You start here, of course! Use the form below,
+        Making edits to your tumblr and MySpace HTML no longer giving you the
+        thrill it once did? You need something new. Something fresh.
+        But where do you start? <br>You start here, of course! Fill out the form below,
         and we'll let you know the perfect starting language for you.
       </p>
     </div>
@@ -48,10 +46,10 @@
           <p>2. Which of the following careers interest you most?</p>
           <select id="career">
             <option value="0">Select</option>
-            <option value="Cyber">Cybersecurity</option>
-            <option value="App">App Development</option>
-            <option value="Web">Web Development</option>
-            <option value="Game">Game Development</option>
+            <option value="cyber">Cybersecurity</option>
+            <option value="app">App Development</option>
+            <option value="web">Web Development</option>
+            <option value="game">Game Development</option>
           </select>
           <span id="error-career" class="hidden">* Please choose an option!</span>
         </div>
@@ -69,18 +67,18 @@
         </div>
 
         <div id="radio-form-3" class="survey-question">
-          <p>4. How do you prefer to work with others?</p>
+          <p>4. Which operating system do you prefer to work with?</p>
           <label>
-            <input type="radio" name="team" value="solo" checked>
-            I prefer to work solo.
+            <input type="radio" name="os" value="windows" checked>
+            Windows / Android
           </label><br>
           <label>
-            <input type="radio" name="team" value="in-person">
-            I prefer to work with a team, in person.
+            <input type="radio" name="os" value="mac">
+            Mac / iOS
           </label><br>
           <label>
-            <input type="radio" name="team" value="remote">
-            I prefer to work with a team, remotely.
+            <input type="radio" name="os" value="linux">
+            Linux
           </label>
         </div>
 
@@ -89,12 +87,12 @@
           <select id="select-interest">
             <option value="0">Select</option>
             <option value="help">No! That's why I'm here!</option>
-            <option value="Ruby">Ruby</option>
+            <option value="C++">C++</option>
             <option value="C#">C#</option>
             <option value="JavaScript">JavaScript</option>
             <option value="Go">Go</option>
             <option value="Python">Python</option>
-            <option value="Rust">Rust</option>
+            <option value="Java">Java</option>
             <option value="Swift">Swift</option>
           </select>
           <span id="error-interest" class="hidden">* Please choose an option!</span>
@@ -110,5 +108,6 @@
       <p>Based on your answers, it's clear that the best starting language for you is:</p>
       <h3 id="answer">""</p>
     </div>
+
   </body>
 </html>
