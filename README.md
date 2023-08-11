@@ -2,7 +2,7 @@
 
 #### By _Joey Palchak_
 
-#### A Programming Language Suggestion application.
+#### A Programming Language Suggestion application via HTML, CSS, and JavaScript.
 
 ## Technologies Used
 
@@ -13,7 +13,24 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This is a _Programming Language Suggestion_ webpage, which acts as an application for asking users a series of personal questions and providing a language suggestion based on those answers.
+
+The homepage, or index.html, presents the user with a brief greeting and introduction to the application. Following immediately below, the user is then presented with 5 total survey questions: three of which are multiple choice radio-button-style questions, while the remaining two are drop-down selection-box-style questions. Each of the five questions allow only one answer.
+
+The user is then presented with a Submit button at the bottom of the form. Upon completion of each question, the user may then click Submit for their immediate results. There are two possible outcomes upon clicking the submit button:
+          (1.) The user has successfully answered each question, and the results are displayed below the form, within a new box.
+          (2.) The user has failed to select an option for either (or both) Question 2 or Question 5, at which point an error message will display beside the respective question(s). 
+          
+If outcome (2.) occurs, and there is at least one error message displayed, there will be no results do display to the user until these errors are resolved and a choice is selected.
+
+If outcome (1.) occurs, the user will find they can receive different results according to a number of different answer's they submit on the form. Each successive click of the Submit button will reset the previous form results in favor of the new answers, if new answers are given. 
+
+          * It is possible to receive outcome (1.) on the first Submission, and receive outcome (2.) on the second, and _vice versa_.
+ 
+
+
+
+
 
 ## Setup/Installation Requirements
 
