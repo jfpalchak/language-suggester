@@ -47,12 +47,12 @@
         
         <div id="select-form-career" class="survey-question">
           <p>2. Which of the following careers interest you most?</p>
-          <select id="select-career">
-            <option value="">Please Select</option>
-            <option value="">Cybersecurity</option>
-            <option value="">App Development</option>
-            <option value="">Web Development</option>
-            <option value="">Game Development</option>
+          <select id="career">
+            <option value="0">Please Select</option>
+            <option value="Cyber">Cybersecurity</option>
+            <option value="App">App Development</option>
+            <option value="Web">Web Development</option>
+            <option value="Game">Game Development</option>
           </select>
         </div>
 
@@ -67,8 +67,8 @@
         <div id="select-form-interest" class="survey-question">
           <p>5. Do you already have a language you're interested in?</p>
           <select id="select-interest">
-            <option value="">Please Select</option>
-            <option value="0">No! That's why I'm here!</option>
+            <option value="0">Please Select</option>
+            <option value="help">No! That's why I'm here!</option>
             <option value="Ruby">Ruby</option>
             <option value="C#">C#</option>
             <option value="JavaScript">JavaScript</option>
@@ -78,10 +78,10 @@
             <option value="Swift">Swift</option>
           </select>
         </div>
-        <div class="submit-button">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+
     </div>
   </body>
 </html>
