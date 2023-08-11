@@ -19,6 +19,10 @@
 }
 
 /* RESULTS STYLES */
+.hidden {
+  display: none;
+}
+
 #results {
   margin: 20px 25%;
   padding: 10px;
@@ -35,8 +39,4 @@
   display: hidden;
   color: red;
   /* font-weight: bold; */
-}
-
-.hidden {
-  display: none;
 }
