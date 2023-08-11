@@ -11,6 +11,7 @@
     <title>Programming Language Suggester</title>
   </head>
   <body>
+    <!-- HEADER / GREETING -->
     <div id="greeting" class="container">
       <h1>So you want to be a programmer?</h1>
       <p>
@@ -22,11 +23,13 @@
         and we'll let you know the perfect starting language for you.
       </p>
     </div>
+
+    <!-- BEGINNING OF FORM -->
     <div class="container">
       <h2>Language Suggestion Form:</h2>
       <form id="theForm" class="container">
         <div id="radio-form" class="">
-          <p>Do you have any programming experience?</p>
+          <p>1. Do you have any programming experience?</p>
           <label>
             <input type="radio" name="experience" value="no" checked>
             None
@@ -40,8 +43,20 @@
             I've dabbled here and there.
           </label>
         </div>
-        <div id="select-form" class="">
-          <p>Do you already have a language you're interested in?</p>
+        
+        <div id="select-form-career">
+          <p>2. Which of the following careers interest you most?</p>
+          <select id="select-career">
+            <option value="">Please Select</option>
+            <option value="">Cybersecurity</option>
+            <option value="">App Development</option>
+            <option value="">Web Development</option>
+            <option value="">Game Development</option>
+          </select>
+        </div>
+
+        <div id="select-form-interest" class="">
+          <p>3. Do you already have a language you're interested in?</p>
           <select id="select-interest">
             <option value="">Please Select</option>
             <option value="0">No! That's why I'm here!</option>
@@ -54,8 +69,8 @@
             <option value="Swift">Swift</option>
           </select>
         </div>
-        <div>
-
+        <div class="">
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
     </div>
