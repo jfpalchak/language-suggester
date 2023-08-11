@@ -68,7 +68,7 @@ function handleSubmitEvent(e) {
   const osPref = document.querySelector("input[name='os']:checked").value;
   const langChoice = document.getElementById("select-interest").value;
  
-  // check for errors, save boolean value
+  // check for errors, save returned boolean value
   const error = checkErrors(careerPref, langChoice);
   
   if (langChoice != 'help' && !error){  
