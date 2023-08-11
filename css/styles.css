@@ -1,4 +1,13 @@
 /* FORM STYLES */
+#the-survey {
+  border: 1px black solid;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 .survey-question {
   padding: 10px 0px;
+}
+.survey-question p {
+  font-weight: bold;
 }
