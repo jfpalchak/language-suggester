@@ -21,25 +21,25 @@ The user is then presented with a Submit button at the bottom of the form. Upon 
   1. The user has successfully answered each question, and the results are displayed below the form, within a new box.
   2. The user has failed to select an option for either (or both) Question 2 or Question 5, at which point an error message will display beside the respective question(s). 
           
-If outcome (2.) occurs, and there is at least one error message displayed, there will be no results do display to the user until these errors are resolved and a choice is selected.
+If outcome (2.) occurs, and there is at least one error message displayed, there will be no results to display to the user until these errors are resolved and a choice is selected.
 
 If outcome (1.) occurs, the user will find they can receive different results according to a number of different answer's they submit on the form. Each successive click of the Submit button will reset the previous form results in favor of the new answers, if new answers are given. 
 
   * It is possible to receive outcome (1.) on the first Submission, and receive outcome (2.) on the second, and _vice versa_.
  
-
+Below is a cheat sheet for which results correspond to which combination of answers:
 
 
 
 
 ## Setup/Installation Requirements
 
-1. Copy the **[URL](#link)** provided for this repository.
+1. Copy the **[URL](https://github.com/jfpalchak/language-suggester.git)** provided for this repository.
 2. Open Terminal.
 3. Change your working directory to where you want the cloned directory.
 4. In your terminal, type `git clone` and use the copied URL from Step 1. Or, copy the following git command:
 ```bash
-git clone URL
+git clone https://github.com/jfpalchak/language-suggester.git
 ```
 5. Navigate to the top level of the newly cloned directory.
 6. Open index.html in your browser to view and navigate the webpage.
