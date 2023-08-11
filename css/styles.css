@@ -1,8 +1,15 @@
-/* FORM STYLES */
-#the-survey {
+/* HEADER STYLES */
+
+/* GENERAL CONTENT STYLES */
+.content{
   border: 1px black solid;
   padding: 10px;
   border-radius: 8px;
+}
+
+/* FORM STYLES */
+#the-survey{
+
 }
 
 .survey-question {
@@ -10,4 +17,9 @@
 }
 .survey-question p {
   font-weight: bold;
+}
+
+/* RESULTS STYLES */
+#results {
+ display: none;
 }

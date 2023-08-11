@@ -1,3 +1,8 @@
+// BUSINESS LOGIC
+
+
+// UI LOGIC
+
 // load page resources before running JS functions
 function handleSubmitEvent(e) {
   // prevent page refresh
@@ -9,6 +14,7 @@ function handleSubmitEvent(e) {
   const interest = document.getElementById("select-interest").value;
 
   // here we'll check survey results
+  let result;
 
 }
 
