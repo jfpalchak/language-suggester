@@ -8,7 +8,7 @@
 function reset() {
   document.getElementById('error-interest').setAttribute('class', 'hidden');
   document.getElementById('error-career').setAttribute('class', 'hidden');
-  document.getElementById('results').setAttribute('class', 'hidden')
+  document.getElementById('results').setAttribute('class', 'hidden');
 }
 
 // showResult() will un-hide result text block, and modify
@@ -25,10 +25,11 @@ function showResult(language) {
   text.removeAttribute('class', 'hidden');
 }
 
-// checkErrors() will check for multiple possible error scenarios amongst selection forms.
-// if present, the function will update the form with the appropriate error message,
-// otherwise it will call reset()
-function isError(career, language){
+// checkErrors() will check for multiple error scenarios in the form.
+// if there are errors, it will update the html with the appropriate error message,
+// as well as return a boolean value of true.
+// if there are no errors, it will return a boolean value of false
+function checkErrors(career, language){
   let error;
   if (career === '0' || language === '0') {
     error = true;
@@ -43,10 +44,10 @@ function isError(career, language){
   } else {
     error = false;
   }
-
   return error;
 }
-// load page resources before running JS functions
+
+// handleSubmitEvent() creates an event handler for the form submission
 function handleSubmitEvent(e) {
   // prevent page refresh
   e.preventDefault();
@@ -57,20 +58,26 @@ function handleSubmitEvent(e) {
   const career = document.getElementById("career").value;
   const puzzle = document.querySelector("input[name='puzzle']:checked").value;
   const language = document.getElementById("select-interest").value;
-
+ 
+  const error = checkErrors(career, language);
   // here we'll check survey results
-  if (!isError(career, language)){  // if there's an error, we move on
+  if (language != 'help' && !error){  
+    // if there's no error, and the user has a language they're interested in
+    // just show the language they chose
     showResult(language);
-  // } else if (language === 'help') {
-
-  } else { // if a specific language was selected, we'll suggest that language
-    console.log("there was an error");
+  } else if (language === 'help' && !error) { 
+    // if there's no error, and the user doesn't pick an initial language
+    // we'll go through some logic to choose one based on the form input
+    showResult('this is where we branch');
   }
 }
 
+// handleForm() creates the form object, and calls on the event handler
+// for when the form submit button is pressed
 function handleForm() {
   const form = document.getElementById("form");
   form.addEventListener('submit', handleSubmitEvent);
 }
 
+// load page resources before running all JS functions
 window.addEventListener("load", handleForm);
