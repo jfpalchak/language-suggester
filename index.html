@@ -33,11 +33,11 @@
           <label>
             <input type="radio" name="experience" value="no" checked>
             None
-          </label>
+          </label><br>
           <label>
             <input type="radio" name="experience" value="little">
             Some
-          </label>
+          </label><br>
           <label>
             <input type="radio" name="experience" value="yes">
             I've dabbled here and there.
@@ -53,23 +53,19 @@
             <option value="Web">Web Development</option>
             <option value="Game">Game Development</option>
           </select>
+          <span id="error-career" class="hidden">* Please choose an option!</span>
         </div>
 
         <div id="radio-form-2" class="survey-question">
-          <p>3. Question three.</p>
-          label>
-            <input type="radio" name="experience" value="no" checked>
-            None
-          </label>
+          <p>3. Do you enjoy puzzles?</p>
           <label>
-            <input type="radio" name="experience" value="little">
-            Some
-          </label>
+            <input type="radio" name="puzzle" value="yes" checked>
+            Yes
+          </label><br>
           <label>
-            <input type="radio" name="experience" value="yes">
-            I've dabbled here and there.
+            <input type="radio" name="puzzle" value="no">
+            No
           </label>
-
         </div>
 
         <div class="survey-question">
@@ -89,7 +85,7 @@
             <option value="Rust">Rust</option>
             <option value="Swift">Swift</option>
           </select>
-          <span id="error" class="hidden">* Please choose an option!</span>
+          <span id="error-interest" class="hidden">* Please choose an option!</span>
         </div>
     
         <button type="submit" class="btn btn-primary">Submit</button>

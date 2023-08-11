@@ -35,7 +35,7 @@
 }
 
 /* ERROR STYLES */
-#error {
+#error-interest {
   display: hidden;
   color: red;
   /* font-weight: bold; */

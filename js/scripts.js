@@ -6,7 +6,8 @@
 // reset() will hide errors that have been resolved,
 // as well as remove the previous survey result if a new error is returned
 function reset() {
-  document.getElementById('error').setAttribute('class', 'hidden');
+  document.getElementById('error-interest').setAttribute('class', 'hidden');
+  document.getElementById('error-career').setAttribute('class', 'hidden');
   document.getElementById('results').setAttribute('class', 'hidden')
 }
 
@@ -24,29 +25,40 @@ function showResult(language) {
   text.removeAttribute('class', 'hidden');
 }
 
-// when called, showError() will update the form with an error message
-function showError() {
-  document.getElementById('error').removeAttribute('class', 'hidden');
+// checkErrors() will check for multiple possible error scenarios amongst selection forms.
+// if present, the function will update the form with the appropriate error message,
+// otherwise it will call reset()
+function checkErrors(career, interest){
+  if (career === '0' || interest === '0') {
+    if (career === '0' && interest == '0') { 
+      document.getElementById('error-interest').removeAttribute('class', 'hidden');
+      document.getElementById('error-career').removeAttribute('class', 'hidden');
+    } else if (career === '0') {
+      document.getElementById('error-career').removeAttribute('class', 'hidden');
+    } else {
+      document.getElementById('error-interest').removeAttribute('class', 'hidden');
+    }
+  } else {
+    reset();
+  }
 }
-
 // load page resources before running JS functions
 function handleSubmitEvent(e) {
   // prevent page refresh
   e.preventDefault();
-  // if re-submitting, reset error messages
-  reset();
 
   // grab answers to each survey question
   const experience = document.querySelector("input[name='experience']:checked").value;
   const career = document.getElementById("career").value;
+  const puzzle = document.querySelector("input[name='puzzle']:checked").value;
   const language = document.getElementById("select-interest").value;
 
-  // const text = document.getElementById('results');
-  // const answer = document.getElementById('answer');
+  // check for errors, and if re-submitting, reset error messages
+  checkErrors(career, language);
 
   // here we'll check survey results
-  if (language === '0'){ 
-    showError();
+  if (language === 'help'){ 
+    showResult(language);
   // } else if (language === 'help') {
 
   } else { // if a specific language was selected, we'll suggest that language
