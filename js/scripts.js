@@ -1,5 +1,19 @@
 // BUSINESS LOGIC
 
+// userKnows() takes Q5 input and the boolean returned from checkError() as parameters
+// returns true if the user chose a specific language and there's no error,
+// otherwise returns false
+function userKnows(question5Input, error) {
+  return (question5Input != 'help' && !error);
+}
+
+// userDoesNotKnow() takes Q5 input and the boolean returned from checkError() as parameters
+// returns true if the user doesn't know which language they like, and there's no error
+// otherwise returns false
+function userDoesNotKnow(question5Input, error) {
+  return (question5Input === 'help' && !error);
+}
+
 // isError() takes Question 2 and 5 inputs as parameters, respectively
 // returns true if at least one has an invalid input, otherwise returns false
 function isError(question2Input, question5Input) {
@@ -12,9 +26,9 @@ function bothAreInvalid(question2Input, question5Input) {
   return (question2Input === '0' && question5Input === '0');
 }
 
-// isInvalid() takes Question 2 input as a parameter
+// isQ2Invalid() takes Question 2 input as a parameter
 // returns true if it has an invalid input, otherwise returns false
-function isInvalid(question2Input) {
+function isQ2Invalid(question2Input) {
   return (question2Input === '0');
 }
 
@@ -59,7 +73,7 @@ function checkErrors(career, interest){
     if (bothAreInvalid(career, interest)) { 
       showError2();
       showError5();
-    } else if (isInvalid(career)) {
+    } else if (isQ2Invalid(career)) {
       showError2();
     } else {
       showError5();
@@ -68,11 +82,12 @@ function checkErrors(career, interest){
   return error;
 }
 
-// suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters,
-// then uses branch logic to decide which language to suggest the user
+// suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters
+// using branch logic to decide which language to suggest the user,
+// it then calls on showResult() with the suggested language as its argument
 function suggestLanguage(puzzle, os, career) {
   if (puzzle === 'no') {
-    showResult("If you don't like puzzles, maybe programming isn't for you...");
+    showResult("Um, well...\n\nIf you don't like puzzles, maybe programming isn't for you...");
   } else if (os != 'mac' && (career === 'app' || career === 'game')) {
     showResult('C++');
   } else if (os === 'mac' && career === 'app'){
@@ -99,13 +114,13 @@ function handleSubmitEvent(e) {
   // check Question 2 and 5 for errors, save returned boolean value
   const error = checkErrors(careerPref, langChoice);
   
-  if (langChoice != 'help' && !error){  
+  if (userKnows(langChoice, error)){  
     // if there's no error, and the user has a language they're interested in,
     // just show the language they chose
     showResult(langChoice);
-  } else if (langChoice === 'help' && !error) { 
+  } else if (userDoesNotKnow(langChoice, error)) { 
     // if there's no error, and the user isn't sure what language they like,
-    // suggest a starting language based on survey answers
+    // suggest a starting language based on survey answers for Q2, Q3, and Q4
     suggestLanguage(puzzlePref, osPref, careerPref);
   }
 }

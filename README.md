@@ -29,7 +29,7 @@ If outcome (1.) occurs, the user will find they can receive different results ac
  
 Below is a cheat sheet for which results correspond to which combination of answers (assuming there are no errors):
 
-| Result      | Form Answer (Question # = Answer)                               |
+| Result      | Form Input (Question # = Answer)                               |
 | :-----------: | -----------                                                   |
 | C++      | Q2 = Apps or Games & Q4 = Windows or Linux & Q3 = Yes & Q5 = No!   |
 | | Q5 = C++                                                                    |
@@ -65,7 +65,7 @@ git clone https://github.com/jfpalchak/language-suggester.git
 
 ## Known Bugs
 
-* When the user resubmits the form with a new error and the previous result disappears, the page will snap back to the top.
+* When the user resubmits the form with a new error and the previous result disappears, the page will snap back to the top of the form.
 
 ## License
 

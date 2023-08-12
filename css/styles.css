@@ -10,7 +10,7 @@ body {
 }
 
 /* HEADER STYLES */
-#greeting {
+#greeting p{
   color: #345043;
 }
 
