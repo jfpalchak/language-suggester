@@ -27,10 +27,23 @@ If outcome (1.) occurs, the user will find they can receive different results ac
 
   * It is possible to receive outcome (1.) on the first Submission, and receive outcome (2.) on the second, and _vice versa_.
  
-Below is a cheat sheet for which results correspond to which combination of answers:
+Below is a cheat sheet for which results correspond to which combination of answers (assuming there are no errors):
 
-
-
+| Result      | Form Answer (Question # = Answer)                               |
+| :-----------: | -----------                                                   |
+| C++      | Q2 = Apps or Games & Q4 = Windows or Linux & Q3 = Yes & Q5 = No!   |
+| | Q5 = C++                                                                    |
+| C#   | Q5 = C#                                                                |
+| JavaScript | Q2 = Web & Q3 = Yes & Q5 = No!                                   |
+| | Q5 = Javascript                                                             |
+| Go | Q5 = Go                                                                  |
+| Python | Q2 = Cybersecurity & Q3 = Yes & Q5 = No!                             |
+| | Q5 = Python                                                                 |
+| Java | Q2 = Games & Q3 = Yes & Q4 = Mac & Q5 = No!                            |
+| | Q5 = Java                                                                   |
+| Swift | Q2 = Apps & Q3 = Yes & Q4 = Mac & Q5 = No!                            |
+| | Q5 = Swift                                                                  |
+| "Maybe it's not for you..." | Q3 = No & Q5 = No!                              |
 
 ## Setup/Installation Requirements
 
