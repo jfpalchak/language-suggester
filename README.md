@@ -43,7 +43,7 @@ Below is a cheat sheet for which results correspond to which combination of answ
 | | Q5 = Java                                                                   |
 | Swift | Q2 = Apps & Q3 = Yes & Q4 = Mac & Q5 = No!                            |
 | | Q5 = Swift                                                                  |
-| "Maybe it's not for you..." | Q3 = No & Q5 = No!                              |
+| "Um, well..." | Q3 = No & Q5 = No!                              |
 
 ## Setup/Installation Requirements
 

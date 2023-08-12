@@ -14,6 +14,42 @@ function userDoesNotKnow(question5Input, error) {
   return (question5Input === 'help' && !error);
 }
 
+// userHatesPuzzles() takes Question 3 input as a parameter
+// returns true only if user does not enjoy Puzzles, otherwise returns false
+function userHatesPuzzles(question3Input) {
+  return (question3Input === 'no');
+}
+
+// userNotMacAppOrGame() takes Question 2 and 4 inputs as parameters, respectively
+// returns true if user wants to develop apps or games on Linux, or on Windows; otherwise returns false
+function userNotMacAppOrGame(question2Input, question4Input) {
+  return (question4Input != 'mac' && (question2Input === 'app' || question2Input === 'game'));
+}
+
+// userMacApp() takes Question 2 and 4 inputs as parameters, respectively
+// returns true only if user wants to develop apps on Mac, otherwise returns false
+function userMacApp(question2Input, question4Input) {
+  return (question4Input === 'mac' && question2Input === 'app');
+}
+
+// userMacGame() takes Question 2 and 4 inputs as parameters, respectively
+// returns true only if user wants to develop games on Mac, otherwise returns false
+function userMacGame(question2Input, question4Input) {
+  return (question4Input === 'mac' && question2Input === 'game');
+}
+
+// userCyber() takes Question 2 input as a parameter
+// returns true only if user is interested in cybersecurity
+function userCyber(question2Input) {
+  return (question2Input === 'cyber');
+}
+
+// userWeb() takes Question 2 input as a parameter
+// returns true only if user is interested in web development
+function userWeb(question2Input) {
+  return (question2Input === 'web');
+}
+
 // isError() takes Question 2 and 5 inputs as parameters, respectively
 // returns true if at least one has an invalid input, otherwise returns false
 function isError(question2Input, question5Input) {
@@ -34,16 +70,15 @@ function isQ2Invalid(question2Input) {
 
 // UI LOGIC
 
-// resetMessages() will hide errors that have been resolved,
-// as well as remove the previous survey result if a new error is returned
+// resetMessages() updates DOM by hiding error messages and the survey submission result
 function resetMessages() {
   document.getElementById('error-interest').setAttribute('class', 'hidden');
   document.getElementById('error-career').setAttribute('class', 'hidden');
   document.getElementById('results').setAttribute('class', 'hidden');
 }
 
-// showResult() updates DOM with result text block, and modifies
-// the survey's answer according to the language passed through the parameter
+// showResult() updates DOM by making the survey submission result visible, 
+// and modifies the survey's answer according to the string passed through the parameter
 function showResult(language) {
   const text = document.getElementById('results');
   const answer = document.getElementById('answer');
@@ -63,17 +98,17 @@ function showError5() {
   document.getElementById('error-interest').removeAttribute('class', 'hidden');
 }
 
-// checkErrors() will check for errors in Question 2 and Question 5
-// if there are errors, it will update the DOM with the appropriate error message,
+// checkErrors() takes Q2 and Q5 input as parameters
+// if either has invalid input, it will update the DOM with the appropriate error message,
 // as well as return a boolean value of true.
-// if there are no errors, it will return a boolean value of false
-function checkErrors(career, interest){
-  const error = isError(career, interest);
+// if both inputs are valid, it will return a boolean value of false
+function checkErrors(question2Input, question5Input){
+  const error = isError(question2Input, question5Input);
   if (error) {
-    if (bothAreInvalid(career, interest)) { 
+    if (bothAreInvalid(question2Input, question5Input)) { 
       showError2();
       showError5();
-    } else if (isQ2Invalid(career)) {
+    } else if (isQ2Invalid(question2Input)) {
       showError2();
     } else {
       showError5();
@@ -85,18 +120,18 @@ function checkErrors(career, interest){
 // suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters
 // using branch logic to decide which language to suggest the user,
 // it then calls on showResult() with the suggested language as its argument
-function suggestLanguage(puzzle, os, career) {
-  if (puzzle === 'no') {
+function suggestLanguage(question2Input, question3Input, question4Input) {
+  if (userHatesPuzzles(question3Input)) {
     showResult("Um, well...\n\nIf you don't like puzzles, maybe programming isn't for you...");
-  } else if (os != 'mac' && (career === 'app' || career === 'game')) {
+  } else if (userNotMacAppOrGame(question2Input, question4Input)) {
     showResult('C++');
-  } else if (os === 'mac' && career === 'app'){
+  } else if (userMacApp(question2Input, question4Input)){
     showResult('Swift');
-  } else if (os === 'mac' && career === 'game') {
+  } else if (userMacGame(question2Input, question4Input)) {
     showResult('Java');
-  } else if (career === 'cyber') {
+  } else if (userCyber(question2Input)) {
     showResult('Python');
-  } else if (career === 'web') {
+  } else if (userWeb(question2Input)) {
     showResult('JavaScript')
   } 
 }
@@ -121,7 +156,7 @@ function handleSubmitEvent(e) {
   } else if (userDoesNotKnow(langChoice, error)) { 
     // if there's no error, and the user isn't sure what language they like,
     // suggest a starting language based on survey answers for Q2, Q3, and Q4
-    suggestLanguage(puzzlePref, osPref, careerPref);
+    suggestLanguage(careerPref, puzzlePref, osPref);
   }
 }
 
