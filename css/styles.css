@@ -9,11 +9,6 @@ body {
   margin: 10px auto;
 }
 
-/* HEADER STYLES */
-#greeting p{
-  color: #345043;
-}
-
 /* FORM STYLES */
 .survey-question {
   padding: 10px 0px;

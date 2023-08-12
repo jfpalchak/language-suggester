@@ -118,8 +118,7 @@ function checkErrors(question2Input, question5Input){
 }
 
 // suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters
-// using branch logic to decide which language to suggest the user,
-// it then calls on showResult() with the suggested language as its argument
+// using branch logic to decide which language to suggest the user
 function suggestLanguage(question2Input, question3Input, question4Input) {
   if (userHatesPuzzles(question3Input)) {
     showResult("Um, well...\n\nIf you don't like puzzles, maybe programming isn't for you...");
