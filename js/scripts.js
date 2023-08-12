@@ -1,5 +1,23 @@
 // BUSINESS LOGIC
 
+// isError() takes Question 2 and 5 inputs as parameters, respectively
+// returns true if at least one has an invalid input, otherwise returns false
+function isError(question2Input, question5Input) {
+  return (question2Input === '0' || question5Input === '0');
+}
+
+// bothAreInvalid() takes Question 2 and 5 inputs as parameters, respectively
+// returns true only if *both* have invalid inputs, otherwise returns false
+function bothAreInvalid(question2Input, question5Input) {
+  return (question2Input === '0' && question5Input === '0');
+}
+
+// isInvalid() takes Question 2 input as a parameter
+// returns true if it has an invalid input, otherwise returns false
+function isInvalid(question2Input) {
+  return (question2Input === '0');
+}
+
 // UI LOGIC
 
 // resetMessages() will hide errors that have been resolved,
@@ -10,7 +28,7 @@ function resetMessages() {
   document.getElementById('results').setAttribute('class', 'hidden');
 }
 
-// showResult() will un-hide result text block, and modify
+// showResult() updates DOM with result text block, and modifies
 // the survey's answer according to the language passed through the parameter
 function showResult(language) {
   const text = document.getElementById('results');
@@ -21,36 +39,36 @@ function showResult(language) {
   text.scrollIntoView();
 }
 
-// showErrorCareer() updates DOM with error message next to Question 2
+// showError2() updates DOM with visible error message next to Question 2
 function showError2() {
   document.getElementById('error-career').removeAttribute('class', 'hidden');
 }
 
-// showErrorCareer() updates DOM with error message next to Question 5
+// showError5() updates DOM with visible error message next to Question 5
 function showError5() {
   document.getElementById('error-interest').removeAttribute('class', 'hidden');
 }
 
-// checkErrors() will check for multiple error scenarios in the form.
-// if there are errors, it will update the html with the appropriate error message,
+// checkErrors() will check for errors in Question 2 and Question 5
+// if there are errors, it will update the DOM with the appropriate error message,
 // as well as return a boolean value of true.
 // if there are no errors, it will return a boolean value of false
 function checkErrors(career, interest){
-  let isError = (career === '0' || interest === '0');
-  if (isError) {
-    if (career === '0' && interest == '0') { 
+  const error = isError(career, interest);
+  if (error) {
+    if (bothAreInvalid(career, interest)) { 
       showError2();
       showError5();
-    } else if (career === '0') {
+    } else if (isInvalid(career)) {
       showError2();
     } else {
       showError5();
     }
   }
-  return isError;
+  return error;
 }
 
-// suggestLanguage() uses the answer of three different survey questions as parameters,
+// suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters,
 // then uses branch logic to decide which language to suggest the user
 function suggestLanguage(puzzle, os, career) {
   if (puzzle === 'no') {
@@ -76,9 +94,9 @@ function handleSubmitEvent(e) {
   const careerPref = document.getElementById("career").value;
   const puzzlePref = document.querySelector("input[name='puzzle']:checked").value;
   const osPref = document.querySelector("input[name='os']:checked").value;
-  const langChoice = document.getElementById("select-interest").value;
+  const langChoice = document.getElementById("interest").value;
  
-  // check for errors, save returned boolean value
+  // check Question 2 and 5 for errors, save returned boolean value
   const error = checkErrors(careerPref, langChoice);
   
   if (langChoice != 'help' && !error){  
