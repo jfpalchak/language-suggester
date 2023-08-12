@@ -59,7 +59,7 @@ git clone https://github.com/jfpalchak/language-suggester.git
 
 ##### _Alternatively:_
 
-1. Go to the website directly via **[GitHub Pages](#link)**.
+1. Go to the website directly via **[GitHub Pages](https://jfpalchak.github.io/language-suggester/)**.
 
 
 
