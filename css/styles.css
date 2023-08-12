@@ -1,14 +1,22 @@
-/* HEADER STYLES */
-
-/* GENERAL CONTENT STYLES */
+/* GENERAL BODY STYLES */
+body {
+  background-color: #517664;
+}
 .content{
   padding: 10px;
   border-radius: 8px;
+  background-color: rgba(145, 216, 172, 0.667);
+  margin: 10px auto;
+}
+
+/* HEADER STYLES */
+#greeting {
+  color: #345043;
 }
 
 /* FORM STYLES */
 #the-survey{
-  background-color: rgba(145, 216, 172, 0.666);
+
 }
 
 .survey-question {
@@ -26,12 +34,12 @@
 #results {
   margin: 20px 25%;
   padding: 10px;
-  background-color: rgba(242, 190, 101, 0.666);
+  background-color: #E5A876;
   border-radius: 8px;
 }
 
 #answer {
-  color: red;
+  color: #D52941;
 }
 
 /* ERROR STYLES */

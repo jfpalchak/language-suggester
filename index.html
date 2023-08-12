@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <script src="js/scripts.js"></script>
 
     <title>Programming Language Suggester</title>
   </head>
   <body>
-    <div id="greeting" class="container">
+    <div id="greeting" class="content container">
       <h1>So you want to be a programmer?</h1>
       <p>
         Making edits to your tumblr and MySpace HTML no longer giving you the
-        thrill it once did? You need something new. Something fresh.
-        But where do you start? <br>You start here, of course! Fill out the form below,
-        and we'll let you know the perfect starting language for you.
+        thrill it once did? You need something new. Something fresh. But where
+        do you start?
+      </p>
+      <p>You start here, of course! </p>
+      <p>
+        Fill out the form below, and we'll suggest
+        the perfect starting language for you.
       </p>
     </div>
 
@@ -27,19 +31,21 @@
         <div id="radio-form" class="survey-question">
           <p>1. Do you have any programming experience?</p>
           <label>
-            <input type="radio" name="experience" value="no" checked>
-            None
-          </label><br>
+            <input type="radio" name="experience" value="no" checked />
+            None 
+          </label> 
+            <br />
           <label>
-            <input type="radio" name="experience" value="little">
-            Some
-          </label><br>
+            <input type="radio" name="experience" value="little" />
+            Some 
+          </label>
+          <br />
           <label>
-            <input type="radio" name="experience" value="yes">
+            <input type="radio" name="experience" value="yes" />
             I've dabbled here and there.
           </label>
         </div>
-        
+
         <div id="select-form-career" class="survey-question">
           <p>2. Which of the following careers interest you most?</p>
           <select id="career">
@@ -49,17 +55,20 @@
             <option value="web">Web Development</option>
             <option value="game">Game Development</option>
           </select>
-          <span id="error-career" class="hidden">* Please choose an option!</span>
+          <span id="error-career" class="hidden">
+            * Please choose an option!
+          </span>
         </div>
 
         <div id="radio-form-2" class="survey-question">
           <p>3. Do you enjoy puzzles?</p>
           <label>
-            <input type="radio" name="puzzle" value="yes" checked>
-            Yes
-          </label><br>
+            <input type="radio" name="puzzle" value="yes" checked />
+            Yes 
+          </label>
+          <br />
           <label>
-            <input type="radio" name="puzzle" value="no">
+            <input type="radio" name="puzzle" value="no" />
             No
           </label>
         </div>
@@ -67,15 +76,17 @@
         <div id="radio-form-3" class="survey-question">
           <p>4. Which operating system do you prefer to work with?</p>
           <label>
-            <input type="radio" name="os" value="windows" checked>
-            Windows / Android
-          </label><br>
+            <input type="radio" name="os" value="windows" checked />
+            Windows / Android 
+          </label>
+          <br />
           <label>
-            <input type="radio" name="os" value="mac">
-            Mac / iOS
-          </label><br>
+            <input type="radio" name="os" value="mac" />
+            Mac / iOS 
+          </label>
+          <br />
           <label>
-            <input type="radio" name="os" value="linux">
+            <input type="radio" name="os" value="linux" />
             Linux
           </label>
         </div>
@@ -93,18 +104,22 @@
             <option value="Java">Java</option>
             <option value="Swift">Swift</option>
           </select>
-          <span id="error-interest" class="hidden">* Please choose an option!</span>
+          <span id="error-interest" class="hidden">
+            * Please choose an option!
+          </span>
         </div>
-    
+
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
 
     <div id="results" class="hidden">
       <h2>Your Results:</h2>
-      <p>Based on your answers, it's clear that the best starting language for you is:</p>
-      <h3 id="answer">""</p>
+      <p>
+        Based on your answers, it's clear that the best starting language for
+        you is:
+      </p>
+      <h3 id="answer">""</h3>
     </div>
-
   </body>
 </html>
