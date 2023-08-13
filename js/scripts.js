@@ -1,13 +1,13 @@
 // BUSINESS LOGIC
 
-// userKnows() takes Q5 input and the boolean returned from checkError() as parameters
+// userKnows() takes Question 5 input and the boolean returned from checkError() as parameters
 // returns true if the user chose a specific language and there's no error,
 // otherwise returns false
 function userKnows(question5Input, error) {
   return (question5Input != 'help' && !error);
 }
 
-// userDoesNotKnow() takes Q5 input and the boolean returned from checkError() as parameters
+// userDoesNotKnow() takes Question 5 input and the boolean returned from checkError() as parameters
 // returns true if the user doesn't know which language they like, and there's no error
 // otherwise returns false
 function userDoesNotKnow(question5Input, error) {
@@ -98,7 +98,7 @@ function showError5() {
   document.getElementById('error-interest').removeAttribute('class', 'hidden');
 }
 
-// checkErrors() takes Q2 and Q5 input as parameters
+// checkErrors() takes Question 2 and 5 input as parameters, respectively
 // if either has invalid input, it will update the DOM with the appropriate error message,
 // as well as return a boolean value of true.
 // if both inputs are valid, it will return a boolean value of false
@@ -117,7 +117,7 @@ function checkErrors(question2Input, question5Input){
   return error;
 }
 
-// suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters
+// suggestLanguage() uses the input of Questions 2, 3, and 4 as parameters, respectively
 // using branch logic to decide which language to suggest the user
 function suggestLanguage(question2Input, question3Input, question4Input) {
   if (userHatesPuzzles(question3Input)) {
@@ -154,7 +154,7 @@ function handleSubmitEvent(e) {
     showResult(langChoice);
   } else if (userDoesNotKnow(langChoice, error)) { 
     // if there's no error, and the user isn't sure what language they like,
-    // suggest a starting language based on survey answers for Q2, Q3, and Q4
+    // suggest a starting language based on survey answers for Questions 2, 3, and 4
     suggestLanguage(careerPref, puzzlePref, osPref);
   }
 }

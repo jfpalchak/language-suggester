@@ -2,7 +2,7 @@
 
 #### By _Joey Palchak_
 
-#### A Programming Language Suggestion application via HTML, CSS, and JavaScript.
+#### A Programming Language Suggestion webpage application utilizing HTML, CSS, and JavaScript.
 
 ## Technologies Used
 
@@ -13,7 +13,7 @@
 
 ## Description
 
-This is a _Programming Language Suggestion_ webpage, which acts as an application for asking users a series of personal questions and providing a language suggestion based on those answers.
+This is a _Programming Language Suggestion_ webpage, which acts as an application that asks users a series of personal questions and provides a programming language suggestion based on those answers.
 
 The homepage, or index.html, presents the user with a brief greeting and introduction to the application. Following immediately below, the user is then presented with 5 total survey questions: three of which are multiple choice radio-button-style questions, while the remaining two are drop-down selection-box-style questions. Each of the five questions allow only one answer.
 
