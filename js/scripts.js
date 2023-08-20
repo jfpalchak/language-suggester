@@ -68,36 +68,6 @@ function isQ2Invalid(question2Input) {
   return (question2Input === '0');
 }
 
-// UI LOGIC
-
-// resetMessages() updates DOM by hiding error messages and the survey submission result
-function resetMessages() {
-  document.getElementById('error-interest').setAttribute('class', 'hidden');
-  document.getElementById('error-career').setAttribute('class', 'hidden');
-  document.getElementById('results').setAttribute('class', 'hidden');
-}
-
-// showResult() updates DOM by making the survey submission result visible, 
-// and modifies the survey's answer according to the string passed through the parameter
-function showResult(language) {
-  const text = document.getElementById('results');
-  const answer = document.getElementById('answer');
-
-  answer.innerText = language;
-  text.removeAttribute('class', 'hidden');
-  text.scrollIntoView();
-}
-
-// showError2() updates DOM with visible error message next to Question 2
-function showError2() {
-  document.getElementById('error-career').removeAttribute('class', 'hidden');
-}
-
-// showError5() updates DOM with visible error message next to Question 5
-function showError5() {
-  document.getElementById('error-interest').removeAttribute('class', 'hidden');
-}
-
 // checkErrors() takes Question 2 and 5 input as parameters, respectively
 // if either has invalid input, it will update the DOM with the appropriate error message,
 // as well as return a boolean value of true.
@@ -133,6 +103,36 @@ function suggestLanguage(question2Input, question3Input, question4Input) {
   } else if (userWeb(question2Input)) {
     showResult('JavaScript')
   } 
+}
+
+// UI LOGIC
+
+// resetMessages() updates DOM by hiding error messages and the survey submission result
+function resetMessages() {
+  document.getElementById('error-interest').setAttribute('class', 'hidden');
+  document.getElementById('error-career').setAttribute('class', 'hidden');
+  document.getElementById('results').setAttribute('class', 'hidden');
+}
+
+// showResult() updates DOM by making the survey submission result visible, 
+// and modifies the survey's answer according to the string passed through the parameter
+function showResult(language) {
+  const text = document.getElementById('results');
+  const answer = document.getElementById('answer');
+
+  answer.innerText = language;
+  text.removeAttribute('class', 'hidden');
+  text.scrollIntoView();
+}
+
+// showError2() updates DOM with visible error message next to Question 2
+function showError2() {
+  document.getElementById('error-career').removeAttribute('class', 'hidden');
+}
+
+// showError5() updates DOM with visible error message next to Question 5
+function showError5() {
+  document.getElementById('error-interest').removeAttribute('class', 'hidden');
 }
 
 // handleSubmitEvent() creates an event handler for the form submission
